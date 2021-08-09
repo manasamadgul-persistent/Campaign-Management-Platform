@@ -17,11 +17,16 @@ namespace CMPApiMicroservice.Controller
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
-        private readonly ILogger _logger;
+        //private readonly ILogger _logger;
 
-        public UserController(IUserRepository userRepository, ILogger<UserController> logger)
+        //public UserController(IUserRepository userRepository, ILogger<UserController> logger)
+        //{
+        //    _logger = logger;
+        //    _userRepository = userRepository;
+        //}
+
+        public UserController(IUserRepository userRepository)
         {
-            _logger = logger;
             _userRepository = userRepository;
         }
 
@@ -36,7 +41,7 @@ namespace CMPApiMicroservice.Controller
             }
             catch(Exception ex)
             {
-                _logger.LogError(ex.Message);
+                //_logger.LogError(ex.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
             
@@ -53,7 +58,7 @@ namespace CMPApiMicroservice.Controller
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                //_logger.LogError(ex.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
@@ -68,7 +73,7 @@ namespace CMPApiMicroservice.Controller
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                //_logger.LogError(ex.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
@@ -86,7 +91,7 @@ namespace CMPApiMicroservice.Controller
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                //_logger.LogError(ex.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
@@ -101,7 +106,7 @@ namespace CMPApiMicroservice.Controller
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                //_logger.LogError(ex.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
 
