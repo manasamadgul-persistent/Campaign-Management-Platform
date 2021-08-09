@@ -23,6 +23,6 @@ namespace CMPApiMicroservice.Models
         [Required]
         public string Address { get; set; }
         [Required]
-        public string State { get; set; }
+        public State State { get; set; }
     }
 }

@@ -16,33 +16,48 @@ namespace CMPApiMicroservice.Repository
         {
             _userContext = dbContext;
         }
-        public IEnumerable<User> GetUser()
+        public async Task<IEnumerable<User>> GetUser()
         {
-            return _userContext.Users.ToList();
+            List<User> datalist = new List<User>();
+            var UData = _userContext.Users.ToList();
+            foreach(var item in UData)
+            {
+                datalist.Add(new User
+                {
+                    Id = item.Id,
+                    Name = item.Name,
+                    PhoneNumber = item.PhoneNumber,
+                    Email = item.Email,
+                    Age = item.Age,
+                    Address = item.Address,
+                    State = Convert.ToInt32(item.State).ToStateEnum()
+                });
+            }
+            return datalist;
         }
-        public void InsertUser(User _user)
+        public async Task InsertUser(User _user)
         {
-            _userContext.Add(_user);
-            Save();
+            var result = await _userContext.AddAsync(_user);
+            await Save();
         }
-        public void DeleteUser(int Id)
+        public async Task DeleteUser(int Id)
         {
-            var product = _userContext.Users.Find(Id);
-            _userContext.Users.Remove(product);
-            Save();
+            var id = await _userContext.Users.FindAsync(Id);
+            _userContext.Users.Remove(id);
+            await Save();
         }
-        public User GetUserById(int Id)
+        public async Task<User> GetUserById(int Id)
         {
-            return _userContext.Users.Find(Id);
+             return await _userContext.Users.FindAsync(Id);
         }
-        public void Save()
+        public async Task Save()
         {
-            _userContext.SaveChanges();
+            await _userContext.SaveChangesAsync();
         }
-        public void UpdateUser(User _user)
+        public async Task UpdateUser(User _user)
         {
             _userContext.Entry(_user).State = EntityState.Modified;
-            Save();
+            await Save();
         }
     }
 }

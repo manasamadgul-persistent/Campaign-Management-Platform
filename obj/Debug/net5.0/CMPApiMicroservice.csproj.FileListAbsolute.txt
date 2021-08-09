@@ -17,7 +17,6 @@ D:\PracticeCode\CMPApiMicroservice\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagg
 D:\PracticeCode\CMPApiMicroservice\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\PracticeCode\CMPApiMicroservice\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\PracticeCode\CMPApiMicroservice\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-D:\PracticeCode\CMPApiMicroservice\obj\Debug\net5.0\CMPApiMicroservice.csprojAssemblyReference.cache
 D:\PracticeCode\CMPApiMicroservice\obj\Debug\net5.0\CMPApiMicroservice.GeneratedMSBuildEditorConfig.editorconfig
 D:\PracticeCode\CMPApiMicroservice\obj\Debug\net5.0\CMPApiMicroservice.AssemblyInfoInputs.cache
 D:\PracticeCode\CMPApiMicroservice\obj\Debug\net5.0\CMPApiMicroservice.AssemblyInfo.cs
@@ -59,3 +58,4 @@ D:\PracticeCode\CMPApiMicroservice\bin\Debug\net5.0\runtimes\win\lib\netstandard
 D:\PracticeCode\CMPApiMicroservice\bin\Debug\net5.0\HealthChecks.SqlServer.dll
 D:\PracticeCode\CMPApiMicroservice\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
 D:\PracticeCode\CMPApiMicroservice\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\PracticeCode\CMPApiMicroservice\obj\Debug\net5.0\CMPApiMicroservice.csprojAssemblyReference.cache
