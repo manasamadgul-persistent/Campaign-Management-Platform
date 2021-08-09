@@ -3275,11 +3275,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\User-Management-MicroService\\CMPApiMicroservice.csproj",
+      "projectUniqueName": "D:\\PracticeCode\\CMPApiMicroservice\\CMPApiMicroservice.csproj",
       "projectName": "CMPApiMicroservice",
-      "projectPath": "D:\\User-Management-MicroService\\CMPApiMicroservice.csproj",
+      "projectPath": "D:\\PracticeCode\\CMPApiMicroservice\\CMPApiMicroservice.csproj",
       "packagesPath": "C:\\Users\\suraj_katwate\\.nuget\\packages\\",
-      "outputPath": "D:\\User-Management-MicroService\\obj\\",
+      "outputPath": "D:\\PracticeCode\\CMPApiMicroservice\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\suraj_katwate\\AppData\\Roaming\\NuGet\\NuGet.Config",
