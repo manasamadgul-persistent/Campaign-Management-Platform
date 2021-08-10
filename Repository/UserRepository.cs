@@ -16,7 +16,7 @@ namespace CMPApiMicroservice.Repository
         {
             _userContext = dbContext;
         }
-        public async Task<IEnumerable<User>> GetUser()
+        public async Task<IEnumerable<User>> getUser()
         {
             List<User> datalist = new List<User>();
             var UData = _userContext.Users.ToList();
@@ -35,18 +35,18 @@ namespace CMPApiMicroservice.Repository
             }
             return datalist;
         }
-        public async Task InsertUser(User _user)
+        public async Task addUser(User _user)
         {
             var result = await _userContext.AddAsync(_user);
             await Save();
         }
-        public async Task DeleteUser(int Id)
+        public async Task deleteUser(int Id)
         {
             var id = await _userContext.Users.FindAsync(Id);
             _userContext.Users.Remove(id);
             await Save();
         }
-        public async Task<User> GetUserById(int Id)
+        public async Task<User> getUserById(int Id)
         {
              return await _userContext.Users.FindAsync(Id);
         }
@@ -54,7 +54,7 @@ namespace CMPApiMicroservice.Repository
         {
             await _userContext.SaveChangesAsync();
         }
-        public async Task UpdateUser(User _user)
+        public async Task updateUser(User _user)
         {
             _userContext.Entry(_user).State = EntityState.Modified;
             await Save();

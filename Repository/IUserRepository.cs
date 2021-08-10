@@ -8,11 +8,11 @@ namespace CMPApiMicroservice.Repository
 {
     public interface IUserRepository
     {
-        Task <IEnumerable<User>> GetUser();
-        Task<User> GetUserById(int Id);
-        Task InsertUser(User emp);
-        Task DeleteUser(int Id);
-        Task UpdateUser(User emp);
+        Task <IEnumerable<User>> getUser();
+        Task<User> getUserById(int Id);
+        Task addUser(User emp);
+        Task deleteUser(int Id);
+        Task updateUser(User emp);
         Task Save();
     }
 }
