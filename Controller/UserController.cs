@@ -27,11 +27,11 @@ namespace CMPApiMicroservice.Controller
 
         // GET: api/<UserController>
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult getUser()
         {
             try
             {
-                var user = _userRepository.GetUser();
+                var user = _userRepository.getUser();
                 return new OkObjectResult(user);
             }
             catch(Exception ex)
@@ -44,11 +44,11 @@ namespace CMPApiMicroservice.Controller
         }
 
         [HttpGet("{id}", Name = "Get")]
-        public IActionResult Get(int id)
+        public IActionResult getUserById(int id)
         {
             try
             {
-                var user = _userRepository.GetUserById(id);
+                var user = _userRepository.getUserById(id);
                 return new OkObjectResult(user);
             }
             catch (Exception ex)
@@ -59,11 +59,11 @@ namespace CMPApiMicroservice.Controller
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] User user)
+        public IActionResult addUser([FromBody] User user)
         {
             try
             {
-                _userRepository.InsertUser(user);
+                _userRepository.addUser(user);
                 return StatusCode(StatusCodes.Status201Created, user);
             }
             catch (Exception ex)
@@ -74,13 +74,13 @@ namespace CMPApiMicroservice.Controller
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] User user)
+        public IActionResult updateUser([FromBody] User user)
         {
             try
             {
                 if (user != null)
                 {
-                    _userRepository.UpdateUser(user);
+                    _userRepository.updateUser(user);
                 }
                 return StatusCode(StatusCodes.Status200OK, user);
             }
@@ -92,11 +92,11 @@ namespace CMPApiMicroservice.Controller
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult deleteUser(int id)
         {
             try
             {
-                _userRepository.DeleteUser(id);
+                _userRepository.deleteUser(id);
                 return StatusCode(StatusCodes.Status200OK);
             }
             catch (Exception ex)
