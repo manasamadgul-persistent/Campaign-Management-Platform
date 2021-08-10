@@ -24,6 +24,21 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.7.1"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -948,6 +963,21 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.8": {
+      "sha512": "5XuTlEkJe7tzY1UQ0FndajTv/SB4PPaYRaAokZVGevoHTkioEF2bbvPxhrqaYr7ayHaN1KItzKsAwMWGil6wRg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/5.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.5.0.8.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -3262,6 +3292,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "AspNetCore.HealthChecks.SqlServer >= 5.0.3",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.8",
       "Microsoft.EntityFrameworkCore >= 5.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
@@ -3275,11 +3306,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PracticeCode\\CMPApiMicroservice\\CMPApiMicroservice.csproj",
+      "projectUniqueName": "D:\\User-Management-MicroService\\CMPApiMicroservice.csproj",
       "projectName": "CMPApiMicroservice",
-      "projectPath": "D:\\PracticeCode\\CMPApiMicroservice\\CMPApiMicroservice.csproj",
+      "projectPath": "D:\\User-Management-MicroService\\CMPApiMicroservice.csproj",
       "packagesPath": "C:\\Users\\suraj_katwate\\.nuget\\packages\\",
-      "outputPath": "D:\\PracticeCode\\CMPApiMicroservice\\obj\\",
+      "outputPath": "D:\\User-Management-MicroService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\suraj_katwate\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3311,6 +3342,10 @@
           "AspNetCore.HealthChecks.SqlServer": {
             "target": "Package",
             "version": "[5.0.3, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[5.0.8, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
