@@ -38,9 +38,17 @@ namespace CMPApiMicroservice
         {
 
             services.AddControllers();
+
+            #region Sql Configuration
+
             services.AddDbContext<DBEntities>(o => o.UseSqlServer(Configuration.GetConnectionString("CampaignDB")));
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddHealthChecks().AddSqlServer(Configuration["ConnectionStrings:CampaignDB"]);
+
+            #endregion
+
+            #region JWT Authentication
+
             var appSettingSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingSection);
             var appSetting = appSettingSection.Get<AppSettings>();
@@ -59,6 +67,9 @@ namespace CMPApiMicroservice
                     ValidateAudience = false,
                 };
             });
+
+            #endregion
+
             services.AddSingleton<IAuthenticateService, AuthenticateService>();
             services.AddSwaggerGen(c =>
             {
