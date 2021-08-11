@@ -19,6 +19,7 @@ namespace CMPApiMicroservice.Service
             _appSettings = appSettings.Value;
         }
 
+        // Added UserLogin for authentication
         private List<UserLogin> userLogin = new List<UserLogin>()
         {
             new UserLogin{
@@ -28,6 +29,7 @@ namespace CMPApiMicroservice.Service
             }
         };
 
+        //Create token for authentication 
         public UserLogin Authenticate(string userName, string Password)
         {
             var data = userLogin.SingleOrDefault(au => au.UserName == userName && au.Password == Password);
