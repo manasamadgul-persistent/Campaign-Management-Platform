@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "72fdU7fXff/U7+Rav7xx58Nc0lQBPGMo57xrsm930kt0E36/DmeQ66vr1vhCRvcSB87YajcVQgczn1rs1sK55g==",
+  "dgSpecHash": "bJXWbGcQBPVJTLHERlCq6o4felis8hY/0iFiv/7jmKBC4HdJ9ldSvtQXYrVPdqYF/NpLUSRvILxjZjl8ujJIhA==",
   "success": true,
-  "projectFilePath": "D:\\PracticeCode\\CMPApiMicroservice\\CMPApiMicroservice.csproj",
+  "projectFilePath": "D:\\User-Management-MicroService\\CMPApiMicroservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\suraj_katwate\\.nuget\\packages\\aspnetcore.healthchecks.sqlserver\\5.0.3\\aspnetcore.healthchecks.sqlserver.5.0.3.nupkg.sha512",
     "C:\\Users\\suraj_katwate\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\suraj_katwate\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.8\\microsoft.aspnetcore.authentication.jwtbearer.5.0.8.nupkg.sha512",
     "C:\\Users\\suraj_katwate\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\suraj_katwate\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.2\\microsoft.data.sqlclient.2.1.2.nupkg.sha512",
     "C:\\Users\\suraj_katwate\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

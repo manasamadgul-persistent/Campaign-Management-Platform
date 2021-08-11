@@ -16,6 +16,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CMPApiMicroservice.Models;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using CMPApiMicroservice.Service;
 
 namespace CMPApiMicroservice
 {
@@ -36,6 +41,25 @@ namespace CMPApiMicroservice
             services.AddDbContext<DBEntities>(o => o.UseSqlServer(Configuration.GetConnectionString("CampaignDB")));
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddHealthChecks().AddSqlServer(Configuration["ConnectionStrings:CampaignDB"]);
+            var appSettingSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingSection);
+            var appSetting = appSettingSection.Get<AppSettings>();
+            var secretKey = Encoding.ASCII.GetBytes(appSetting.SecretKey);
+            services.AddAuthentication(au => {
+                au.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                au.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(jwt => {
+                jwt.RequireHttpsMetadata = false;
+                jwt.SaveToken = true;
+                jwt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(secretKey),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                };
+            });
+            services.AddSingleton<IAuthenticateService, AuthenticateService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CMPApiMicroservice", Version = "v1" });
